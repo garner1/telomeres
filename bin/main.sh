@@ -37,7 +37,7 @@ rm filelist_"$experiment"
 
 ################################################################################
 
-# "$bin"/module/prepare_files.sh  $r1 $in $numb_of_files $r2
+"$bin"/module/prepare_files.sh  $r1 $in $numb_of_files $r2
 "$bin"/module/pattern_filtering.sh $in $out $patfile
 "$bin"/module/prepare_for_mapping.sh $numb_of_files $out $aux $in
 
@@ -59,8 +59,10 @@ for fastq in $(ls $out/*.fq); do
     samtools index $out/$name.sorted.bam $out/$name.sorted.bam.bai
 done
 
+rm -f $out/*.group.log
 parallel "umi_tools dedup -I $out/{} -S $out/{.}.dedup.bam -L $out/{.}.group.log --edit-distance-threshold 2" ::: A.sorted.bam AA.sorted.bam TAA.sorted.bam CTAA.sorted.bam CCTAA.sorted.bam CCCTAA.sorted.bam
 
+rm -f $out/summary.txt
 parallel "echo {};cat {}|grep 'Input Reads' " ::: $(ls $out/*.sorted.group.log) | paste - - > $out/summary.txt
 echo >> $out/summary.txt
 parallel "echo {};cat {}|grep 'Number of reads out' " ::: $(ls $out/*.sorted.group.log) | paste - - >> $out/summary.txt
