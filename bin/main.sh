@@ -17,7 +17,7 @@ numbproc=32
 
 # PREPARE DIRECTORY STRUCTURE
 datadir=$HOME/Work/dataset/telo && mkdir -p $datadir/$experiment
-bin=$HOME/Dropbox/pipelines/BLISS/bin
+bin=$HOME/Dropbox/pipelines/telomeres/bin
 in=$datadir/$experiment/indata && mkdir -p $in
 out=$datadir/$experiment/outdata && mkdir -p $out
 aux=$datadir/$experiment/auxdata && mkdir -p $aux
