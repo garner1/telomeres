@@ -38,7 +38,7 @@ rm filelist_"$experiment"
 ################################################################################
 
 if [ ! -f $in/r1oneline.fq ]; then
-    "$bin"/module/prepare_files.sh $r1 $in $numb_of_files $r2
+    "$bin"/module/prepare_files.sh $r1 $r2 $in
 fi
 "$bin"/module/pattern_filtering.sh $in $out $patfile
 "$bin"/module/prepare_for_mapping.sh $numb_of_files $out $aux $in
