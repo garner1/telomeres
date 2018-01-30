@@ -1,6 +1,121 @@
 #!/usr/bin/env bash
 
 
+barcode=ACGACCGC
+code=BB59
+exp="$code"
+bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=TGATGCGC
+# code=BB59
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=CATCAATC
+# code=BB59
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=GTCGTATC
+# code=BB59
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=ACGACATC
+# code=BB59
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=TGATGATC
+# code=BB59
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=CATCATCC
+# code=BB59
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=GTCGTTCC
+# code=BB59
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=ACGACCGC
+# code=BB60
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=TGATGCGC
+# code=BB60
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=CATCAATC
+# code=BB60
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=GTCGTATC
+# code=BB60
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=ACGACATC
+# code=BB60
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=TGATGATC
+# code=BB60
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=CATCATCC
+# code=BB60
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+# barcode=GTCGTTCC
+# code=BB60
+# exp="$code"
+# bash main.sh "$exp" ~/igv/genomes/hg19.fasta ../patterns/telo*"$exp"_*_"$barcode" /media/bicroserver_2-seq/COLLABORATIONS/IMB01 
+# mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+# mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
+
+
+###############################################################################
+
 # run=BICRO59
 # barcode=TGATGCGC
 # code=BB67
@@ -9,11 +124,11 @@
 # mkdir -p ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
 # mv ~/Work/dataset/telo/"$exp"/outdata/* ~/Work/dataset/telo/"$exp"/outdata_"$barcode"
 
-run=BICRO59
-barcode=TGATGCGC
-code=BB67
-exp=test
-bash main.sh "$exp" ~/igv/genomes/Mus_musculus.GRCm38.dna.fa ../patterns/telo_*"$code"_*_"$barcode" /media/bicroserver_2-seq/BICRO59/BICRO59/FASTQ
+# run=BICRO59
+# barcode=TGATGCGC
+# code=BB67
+# exp=test
+# bash main.sh "$exp" ~/igv/genomes/Mus_musculus.GRCm38.dna.fa ../patterns/telo_*"$code"_*_"$barcode" /media/bicroserver_2-seq/BICRO59/BICRO59/FASTQ
 # mkdir -p ~/Work/dataset/bliss/"$exp"/outdata_"$barcode"
 # mv ~/Work/dataset/bliss/"$exp"/outdata/* ~/Work/dataset/bliss/"$exp"/outdata_"$barcode"
 
