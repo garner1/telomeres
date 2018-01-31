@@ -38,7 +38,7 @@ rm filelist_"$experiment"
 ################################################################################
 
 if [ ! -f $in/r1oneline.fq ]; then
-    "$bin"/module/prepare_files.sh $r1 $r2 $in
+    "$bin"/module/prepare_files.sh "$r1" "$in" 
 fi
 "$bin"/module/pattern_filtering.sh $in $out $patfile
 "$bin"/module/prepare_for_mapping.sh $numb_of_files $out $aux $in
@@ -52,13 +52,14 @@ $bin/module/telomer.sh $in/processed.fa ../patterns/telomer $out $aux $in # prep
 
 for fastq in $(ls $out/*.fq); do
     name=`echo $fastq | rev | cut -d'/' -f1 | rev | cut -d'.' -f1`
+    echo $name
     bwa mem -t $numbproc $refgenome $fastq > $out/"$name".sam
-    samtools view -H $out/$name.sam > $aux/header
-    samtools view $out/$name.sam | awk '{OFS="\t";$2="16";$3="chr1";$4="1000";$5="255";$6="63M";$10="*";$11="*";print $0}' > $aux/tailer
-    cat $aux/header $aux/tailer > $out/$name.sam
-    samtools view -bS $out/$name.sam > $out/$name.bam
-    samtools sort -o $out/$name.sorted.bam $out/$name.bam
-    samtools index $out/$name.sorted.bam $out/$name.sorted.bam.bai
+    samtools view -H $out/"$name".sam > $aux/header
+    samtools view $out/"$name".sam | awk '{OFS="\t";$2="16";$3="chr1";$4="1000";$5="255";$6="63M";$10="*";$11="*";print $0}' > $aux/tailer
+    cat $aux/header $aux/tailer > $out/"$name".sam
+    samtools view -bS $out/"$name".sam > $out/"$name".bam
+    samtools sort $out/"$name".bam -o $out/"$name".sorted.bam
+    samtools index $out/"$name".sorted.bam 
 done
 
 rm -f $out/*.group.log

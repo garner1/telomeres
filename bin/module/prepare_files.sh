@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-r1=$1
-r2=$2
-in=$3
+r1="$1"
+in="$2"
 
 echo "Decompress fastq.gz ..."
 gunzip -c $r1 > $in/r1-unzip
