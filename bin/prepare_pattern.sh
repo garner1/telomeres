@@ -1,11 +1,10 @@
 #!/bin/usr/env bash
 
-inputfile=$1
+exp=$1
 
-while read -r line; do 
-    f1=`echo $line|cut -d',' -f1`
-    f2=`echo $line|cut -d',' -f2|tr '/' '-'`
-    f3=`echo $line|cut -d',' -f3`
-    touch "$f1"_"$f2"_"$f3" 
-    echo ^ 8...8 $f3[2,0,0] 1...1000 $ > "$f1"_"$f2"_"$f3" 
-done < $inputfile
+cd ~/Work/pipelines/telomeres/patterns 
+
+parallel "cat {} | awk '{print \$1,\$2,\$3,\"( A | ( AA | (TAA | (CTAA | (CCTAA | CCCTAA))))) CCCTAA\",\$4,\$5}' > telo_{}" ::: *$exp*
+
+cd ~/Work/pipelines/telomeres/bin
+

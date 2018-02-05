@@ -55,7 +55,7 @@ for fastq in $(ls $out/*.fq); do
     echo $name
     bwa mem -t $numbproc $refgenome $fastq > $out/"$name".sam
     samtools view -H $out/"$name".sam > $aux/header
-    samtools view $out/"$name".sam | awk '{OFS="\t";$2="16";$3="chr1";$4="1000";$5="255";$6="63M";$10="*";$11="*";print $0}' > $aux/tailer
+q    samtools view $out/"$name".sam | awk '{OFS="\t";$2="16";$3="chr1";$4="1000";$5="255";$6="63M";$10="*";$11="*";print $0}' > $aux/tailer
     cat $aux/header $aux/tailer > $out/"$name".sam
     samtools view -bS $out/"$name".sam > $out/"$name".bam
     samtools sort $out/"$name".bam -o $out/"$name".sorted.bam
